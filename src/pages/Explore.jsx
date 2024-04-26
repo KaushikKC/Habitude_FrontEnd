@@ -19,7 +19,7 @@ function Explore() {
   const [isOpen, setIsOpen] = useState(false)
   const [isJoin, setIsJoin] = useState(false)
   return (
-    <div className='flex flex-col items-center bg-blue-50'>
+    <div className='flex flex-col justify-center items-center bg-blue-50'>
       {
         habbitOpen && 
         (
@@ -45,9 +45,9 @@ function Explore() {
       <div className='pt-[30px]'>
         <div className='flex flex-row justify-between'>
           <p className='font-semibold font-secondary text-[25px]'>Suggested for you</p>
-          <div className='flex items-center space-x-3'>
-            <p onClick={()=> setHabbitOpen(!habbitOpen)} className='text-xl cursor-pointer'>+</p>
-          <p className=' font-secondary text-[20px] text-[#3843FF] cursor-pointer'>VIEW ALL</p>
+          <div className='flex items-center justify-center space-x-3 text-[#3843FF] cursor-pointer'>
+            <p onClick={()=> setHabbitOpen(!habbitOpen)} className='text-xl'>+</p>
+          <p className=' font-secondary text-[20px]'>VIEW ALL</p>
           </div>
         </div>
           <div className='grid grid-rows-2 grid-flow-col gap-5 py-[10px]'>
@@ -76,9 +76,9 @@ function Explore() {
       <div className='pt-[30px]'>
         <div className='flex flex-row justify-between'>
           <p className='font-semibold font-secondary text-[25px]'>Challenges</p>
-          <div className='flex items-center space-x-3'>
-            <p onClick={()=> setIsOpen(!isOpen)} className='text-xl cursor-pointer'>+</p>
-          <p className=' font-secondary text-[20px] text-[#3843FF] cursor-pointer'>VIEW ALL</p>
+          <div className='flex items-center space-x-3 text-[#3843FF] cursor-pointer'>
+            <p onClick={()=> setIsOpen(!isOpen)} className='text-xl'>+</p>
+          <p className=' font-secondary text-[20px] '>VIEW ALL</p>
           </div>
         </div>
           <div className='grid grid-rows-2 grid-flow-col gap-5 py-[10px]'>
