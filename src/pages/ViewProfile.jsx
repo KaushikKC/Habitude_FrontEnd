@@ -5,6 +5,7 @@ function ViewProfile() {
   return (
     <div className='flex flex-col justify-center items-center bg-blue-50'>
       <Navbar />
+      
     </div>
   )
 }
