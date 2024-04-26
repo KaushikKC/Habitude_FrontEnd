@@ -5,16 +5,16 @@ function CreateHabit({habbitOpen,setHabbitOpen}) {
   const [name,setName] = useState('')
   return (
     <div className='flex flex-col items-center bg-blue-50 h-[100vh] overflow-auto pb-6 z-[99999]'>
-      <div className='bg-[#00BFFF] w-full'>
-      <p onClick={()=> setHabbitOpen(!habbitOpen)} className='flex justify-end mr-4 pt-3 cursor-pointer'>Close</p>
-    <div className=' w-full flex justify-center p-[10px]'>
-      <p className='font-secondary font-bold text-[40px] text-white'>Habbit</p>
+      <div className='bg-[#FFC046] w-full'>
+      <p onClick={()=> setHabbitOpen(!habbitOpen)} className='flex justify-end mr-4 pt-1 cursor-pointer hover:underline'>Close</p>
+    <div className=' w-full flex justify-center '>
+      <p className='font-secondary font-bold text-[40px] text-white'>Habit</p>
       </div>
       
     </div>
-      <div className='pt-[30px]'>
+      <div className='pt-[20px]'>
         <p className='font-semibold font-secondary text-[40px]'>Create Habit</p>
-        <div className='pt-[30px]'>
+        <div className='pt-[20px]'>
             <p className='font-semibold font-secondary text-[25px] pb-[10px]'>NAME</p>
             <input value={name} onChange={(e)=> setName(e.target.value)} type="text" className='bg-transparent w-[350px] outline-none border-b-2 border-black' placeholder='Enter Habit Name' />
         </div>
