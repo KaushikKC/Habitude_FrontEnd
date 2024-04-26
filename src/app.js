@@ -5,6 +5,7 @@ import Profile1 from "./pages/Profile1";
 import Profile2 from "./pages/Profile2";
 import Profile3 from "./pages/Profile3";
 import { Web3Provider } from "./Web3Provider";
+import Explore from "./pages/Explore";
 
 
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/create" element={<Profile1 />} />
         <Route path="/choose" element={<Profile2 />} />
         <Route path="/add" element={<Profile3 />} />
+        <Route path="/explore" element={<Explore />} />
         </Routes>
       </BrowserRouter>
       </Web3Provider>
