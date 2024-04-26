@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar'
 
 function Profile1() {
   return (
     <div className='bg-blue-50 h-[100vh]'>
-      <div className="bg-[#00BFFF] w-full flex justify-end p-[12px]">
-          <button className="p-[10px] mx-[40px] border border-black w-[180px] rounded-lg">Connect Wallet</button>
-      </div>
+      <Navbar />
       <div className='flex flex-col justify-center items-center my-[30px]'>
         <p className='font-secondary font-bold text-[50px]'>Create Account</p>
       <div >

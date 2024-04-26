@@ -1,13 +1,12 @@
 import React from "react";
 import illustration from "../images/Illustration.png";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function Home() {
   return (
     <div className="bg-gradient-to-r from-[#3843FF] via-blue-60 to-[#5258ca] h-[100vh]">
-      <div className="bg-white w-full flex justify-end p-[10px]">
-          <button className="p-[10px] mx-[40px] border border-black w-[180px] rounded-lg">Connect Wallet</button>
-      </div>
+      <Navbar />
       {/* bg-gradient-to-r from-[#3843FF] via-blue-60 to-[#5258ca] */}
       <div className="flex flex-row justify-center items-center py-[90px]">
         <img src={illustration} alt="" className="h-[550px] w-[550px]" />
