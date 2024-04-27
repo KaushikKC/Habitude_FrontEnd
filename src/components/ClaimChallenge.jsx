@@ -10,7 +10,7 @@ function ClaimChallenge({isClaimChallenge,setIsClaimChallenge}) {
   <p className='text-[22px]'>You just completed your first challenge !</p>
   <p className='font-extralight w-[400px] text-center py-[20px]'>This badge is a symbol of your commitment to yourself. Keep going and earn more badges along the way.</p>
   <div>
-    <button className='w-[250px] bg-white text-black py-[10px] my-[20px] rounded-lg hover:border hover:border-black'>Claim 20 Points!</button>
+    <button className='w-[250px] bg-white text-black py-[10px] my-[20px] rounded-lg hover:border hover:border-black'>Claim Your Split!</button>
   </div>
 </div>
   )

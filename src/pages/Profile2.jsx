@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import male from '../images/man.png'
 import female from '../images/woman.png'
 import { Link } from 'react-router-dom'
@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 
 
 function Profile2() {
+  const [selected,setSelected] = useState('')
   return (
     <div className=' bg-blue-50 h-[100vh]'>
       <Navbar />
@@ -14,11 +15,11 @@ function Profile2() {
         <div className='pt-[30px]'>
             <p className='font-semibold font-secondary text-[25px]'>Choose your Gender</p>
             <div className='grid grid-col-2 grid-flow-col gap-5 py-[10px]'>
-                <div className='bg-white w-[180px] h-[180px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+                <div onClick={()=> setSelected('Male')} className={`bg-white w-[180px] h-[180px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF] ${selected === "Male" && 'border-2'}`}>
                     <p className='font-secondary py-[25px] text-[25px]'>Male</p>
                     <img src={male} alt="" className='h-[50px] w-[50px]' />
                 </div>
-                <div className='bg-white w-[180px] h-[180px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+                <div onClick={()=> setSelected('Female')} className={`bg-white w-[180px] h-[180px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF] ${selected === "Female" && 'border-2'}`}>
                     <p className='font-secondary py-[25px] text-[25px]'>Female</p>
                     <img src={female} alt="" className='h-[50px] w-[50px]' />
                 </div>

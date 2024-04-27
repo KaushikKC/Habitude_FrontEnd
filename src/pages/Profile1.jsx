@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
 function Profile1() {
   const[username,setUserName] = useState('')
+  const [email,setEmail] = useState('')
+
+  useEffect(() => {
+    localStorage.setItem('username', username);
+    localStorage.setItem('email',email)
+}, [username,email]);
   return (
     <div className='bg-blue-50 h-[100vh]'>
       <Navbar />
@@ -16,7 +22,7 @@ function Profile1() {
         </div>
         <div className='py-[30px]'>
             <p className='font-semibold font-secondary text-[25px] pb-[10px]'>EMAIL ID</p>
-            <input type="email" className='bg-transparent w-[350px] outline-none border-b-2 border-black' placeholder='Enter your Email ID' />
+            <input value={email} type="email" onChange={(e) => setEmail(e.target.value)} className='bg-transparent w-[350px] outline-none border-b-2 border-black' placeholder='Enter your Email ID' />
         </div>
         <div className=''>
             <p className='font-semibold font-secondary text-[25px] pb-[10px]'>PASSWORD</p>
