@@ -1,8 +1,18 @@
+import { addDoc, collection } from 'firebase/firestore';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { db } from '../config/firebase';
 
 function CreateHabit({habbitOpen,setHabbitOpen}) {
   const [name,setName] = useState('')
+
+  const handleSubmit = async () => {
+    const docRef = await addDoc(collection(db, "Habiits"), {
+      name: name,    
+    });
+
+    setHabbitOpen(!habbitOpen)
+  }
   return (
     <div className='flex flex-col items-center bg-blue-50 h-[100vh] overflow-auto pb-6 z-[99999]'>
       <div className='bg-[#FFC046] w-full'>
@@ -50,7 +60,7 @@ function CreateHabit({habbitOpen,setHabbitOpen}) {
             </select>
         </div>
       </div>
-      <Link to='/explore' className='px-[25px]'>
+      <Link onClick={()=> handleSubmit()} className='px-[25px]'>
          <button className='bg-[#3843FF] text-white w-[350px] rounded-3xl p-[10px] hover:font-extrabold'>Create Habit</button>
       </Link>
   </div>

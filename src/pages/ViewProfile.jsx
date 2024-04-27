@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import profilepic from '../images/kaushik.png'
 import water from '../images/droplevel.png'
@@ -7,6 +7,17 @@ import meditate from '../images/meditatelevel.png'
 function ViewProfile() {
     const [username,setUserName] = useState("");
     const [email,setEmail] = useState("");
+
+    useEffect(() => {
+      // Fetching data from localStorage
+      const storedUsername = localStorage.getItem('username') || '';
+      const storedEmail = localStorage.getItem('email') || '';
+      
+
+      setUserName(storedUsername);
+      setEmail(storedEmail);
+  
+  }, []);
   return (
     <div className='flex flex-col items-center bg-blue-50 font-secondary h-[100vh]'>
       <Navbar />
@@ -14,8 +25,8 @@ function ViewProfile() {
         <p className='text-[40px] font-semibold'>Your Profile</p>
         <div className='flex flex-col justify-center items-center p-4 rounded-2xl'>
         <img src={profilepic} alt='profile' className='h-32 w-32 rounded-full border-4 border-black  mx-auto my-4'/>
-        <p className='text-[25px]'>Kaushik</p>
-        <p className=''>kaushik@gmail.com</p>
+        <p className='text-[25px]'>{username}</p>
+        <p className=''>{email}</p>
         <p className='text-[25px]'>Total Points: 1000 🌟</p>
         </div>
         <div className='flex flex-row justify-between items-center w-[450px] space-x-7 my-[20px]'>

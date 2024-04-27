@@ -1,9 +1,19 @@
 import { set } from 'firebase/database'
+import { addDoc, collection } from 'firebase/firestore'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { db } from '../config/firebase'
 
 function CreateChallenge({isOpen,setIsOpen}) {
   const[name,setName] = useState('')
+
+  const handleSubmit = async () => {
+    const docRef = await addDoc(collection(db, "Habiits"), {
+      name: name,    
+    });
+
+    setIsOpen(!isOpen)
+  }
   return (
     <div className='flex flex-col items-center bg-blue-50 h-[100vh] overflow-auto pb-6 z-[99999]'>
       <div className='bg-[#FFC046] w-full'>
@@ -28,7 +38,7 @@ function CreateChallenge({isOpen,setIsOpen}) {
             <button className='bg-[#3843FF] text-white w-[150px] rounded-3xl p-[10px] mt-[10px]'>Add Habit +</button>
         </div>
       </div>
-      <Link to='/explore' className='p-[25px] cursor-pointer'>
+      <Link onClick={()=> handleSubmit()} className='p-[25px] cursor-pointer'>
          <button className='bg-[#3843FF] text-white w-[350px] rounded-3xl p-[10px] hover:font-extrabold'>Create Challenge</button>
       </Link>
   </div>
