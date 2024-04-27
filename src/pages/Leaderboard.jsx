@@ -19,7 +19,7 @@ function Leaderboard() {
       <div className='flex items-center space-x-20 bg-white rounded-lg w-[500px] mb-[30px] text-black'>
         <p className='border-2 border-gray-300 rounded-full w-11 p-[10px] m-[20px] text-center'>2</p>
         <div>
-            <p className=''>Chaal</p>
+            <p className=''>Madhu</p>
             <p className='text-gray-400 text-[18px]'>180 Points</p>
         </div>
         <img src={img1} alt="" className='h-[60px] w-[60px] rounded-full' />
@@ -27,7 +27,7 @@ function Leaderboard() {
       <div className='flex items-center space-x-20 bg-white rounded-lg w-[500px] mb-[30px] text-black'>
         <p className='border-2 border-gray-300 rounded-full w-11 p-[10px] m-[20px] text-center'>3</p>
         <div>
-            <p className=''>John</p>
+            <p className=''>Chaal</p>
             <p className='text-gray-400 text-[18px]'>170 Points</p>
         </div>
         <img src={img1} alt="" className='h-[60px] w-[60px] rounded-full' />

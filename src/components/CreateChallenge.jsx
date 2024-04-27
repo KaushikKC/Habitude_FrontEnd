@@ -28,7 +28,7 @@ function CreateChallenge({isOpen,setIsOpen}) {
             <button className='bg-[#3843FF] text-white w-[150px] rounded-3xl p-[10px] mt-[10px]'>Add Habit +</button>
         </div>
       </div>
-      <Link to='/explore' className='p-[25px]'>
+      <Link to='/explore' className='p-[25px] cursor-pointer'>
          <button className='bg-[#3843FF] text-white w-[350px] rounded-3xl p-[10px] hover:font-extrabold'>Create Challenge</button>
       </Link>
   </div>

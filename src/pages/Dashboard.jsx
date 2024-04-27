@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import percentage from '../images/Circle - Loader.png'
 import clock from '../images/Time Circle.png'
@@ -7,10 +7,29 @@ import water from '../images/droplevel.png'
 import walk from '../images/walklevel.png'
 import plants from '../images/plantslevel.png'
 import meditate from '../images/meditatelevel.png'
+import ClaimHabit from '../components/ClaimHabit'
+import tick from '../images/tick.png'
+import ClaimChallenge from '../components/ClaimChallenge'
 
 function Dashboard() {
+    const [isClaim,setIsClaim]=useState(false)
+    const [isClaimChallenge,setIsClaimChallenge]=useState(false)
+
   return (
+    
     <div className='flex flex-col font-secondary items-center bg-blue-50 '>
+        {isClaim && (
+        <div className='fixed inset-0  w-[100vw] flex justify-center items-center overflow-hidden'>
+        <div className='bg-[rgba(0,0,0,0.7)]/70 z-[9999] absolute backdrop-blur-md inset-0'></div>
+          <ClaimHabit setIsClaim={setIsClaim} isClaim={isClaim} />
+        </div>
+    )}
+    {isClaimChallenge && (
+        <div className='fixed inset-0  w-[100vw] flex justify-center items-center overflow-hidden'>
+        <div className='bg-[rgba(0,0,0,0.7)]/70 z-[9999] absolute backdrop-blur-md inset-0'></div>
+          <ClaimChallenge setIsClaimChallenge={setIsClaimChallenge} isClaimChallenge={isClaimChallenge} />
+        </div>
+    )}
         <Navbar />
         <div className='pt-[30px]'>
             <p className='text-[22px]'>Hi, Kaushik 👋</p>
@@ -42,7 +61,21 @@ function Dashboard() {
                 <img src={friends} alt="" className='h-[35px] w-[60px]' />
                 <p className='text-gray-500 font-extralight'>4 people joined</p>
             </div>
-
+          </div>
+          <div className='flex flex-row justify-between bg-white p-[15px] w-[450px] rounded-lg my-[30px]'>
+            <div className='flex '>
+            <div className='flex items-center'>
+                <img src={tick} onClick={()=>setIsClaimChallenge(!isClaimChallenge)} alt="" className='h-[35px] w-[35px]' />
+            </div>
+            <div className='px-[15px] flex flex-col justify-start '>
+                <p>Cycling Challenge! 🚴</p>
+                <p className='text-gray-500 font-extralight'>Completed</p>
+            </div>
+            </div>
+            <div className='flex flex-col items-center justify-center'>
+                <img src={friends} alt="" onClick={()=>setIsClaimChallenge(!isClaimChallenge)} className='h-[35px] w-[60px]' />
+                <p className='text-gray-500 font-extralight'>10 people joined</p>
+            </div>
           </div>
           <div className='flex flex-row justify-between items-center w-[450px] space-x-7 my-[10px]'>
             <p className='font-semibold text-[25px]'>Habits</p>
@@ -84,7 +117,7 @@ function Dashboard() {
                 <p>Meditate</p>
                 <p className='text-gray-500 font-extralight'>30/30 MIN</p>
             </div>
-            <div className='flex justify-end ml-auto'>
+            <div onClick={()=>setIsClaim(!isClaim)} className='flex justify-end ml-auto cursor-pointer'>
                 <p className='border border-gray-300 rounded-xl w-9 h-9 text-[28px] text-center text-green-500'>✓</p>
             </div>
         </div>
