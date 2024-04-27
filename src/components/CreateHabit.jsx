@@ -2,7 +2,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { db } from '../config/firebase';
-import { Contract, provider } from '../utils/contract';
+import { contract, provider } from '../utils/contract';
 import { ethers } from "ethers";
 
 function CreateHabit({habbitOpen,setHabbitOpen}) {
@@ -12,18 +12,23 @@ function CreateHabit({habbitOpen,setHabbitOpen}) {
     const docRef = await addDoc(collection(db, "Habits"), {
       name: name,    
     });
-
+    console.log("provider",provider)
     const signer = provider.getSigner();
+    console.log(signer,"signer")
+    try{
 
-    // Call the contract function with a specified gas limit
-    const transaction = await Contract.connect(signer).createHabit(name, 100, 8, 7, 20, {
-        gasLimit: 300000,
-    });
+    const transaction = await contract.connect(signer).createHabit(name.toString(), 100, 8, 1, 20,{
+      gasLimit: 300000,
+  });
 
-    // Wait for the transaction to be mined
     await transaction.wait();
 
+
     setHabbitOpen(!habbitOpen)
+    } catch (error) {
+      console.log(error,"error")
+
+    }
   }
   return (
     <div className='flex flex-col items-center bg-blue-50 h-[100vh] overflow-auto pb-6 z-[99999]'>
