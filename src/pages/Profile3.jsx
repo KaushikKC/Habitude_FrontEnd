@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import water from '../images/waterdrop.png'
 import books from '../images/books.png'
 import meditate from '../images/meditate.png'
@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
 function Profile3() {
+    const [selected, setSelected]= useState('')
   return (
     <div className='bg-blue-50 h-[100vh]'>
        <Navbar />
@@ -18,27 +19,27 @@ function Profile3() {
             <p className='font-semibold font-secondary text-[25px]'>Choose your first Habits</p>
             <p className=' font-secondary text-[20px] text-gray-400'>You may add more habits later</p>
             <div className='grid grid-rows-2 grid-flow-col gap-5 py-[10px]'>
-                <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+                <div onClick={()=>setSelected('Drink Water')} className={`bg-white w-[150px] h-[150px] cursor-pointer rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF] ${selected === 'Drink Water' && 'border-2'}`}>
                     <p className='font-secondary py-[25px] text-[18px]'>Drink Water</p>
                     <img src={water} alt="" className='h-[42px] w-[42px]' />
                 </div>
-                <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+                <div onClick={()=> setSelected('Read Books')} className={`bg-white w-[150px] h-[150px] cursor-pointer rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF] ${selected === 'Read Books' && 'border-2'}`}>
                     <p className='font-secondary py-[25px] text-[18px]'>Read Books</p>
                     <img src={books} alt="" className='h-[42px] w-[42px]' />
                 </div>
-                <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+                <div onClick={()=> setSelected('Meditate')} className={`bg-white w-[150px] h-[150px] cursor-pointer rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF] ${selected === 'Meditate' && 'border-2'}`}>
                     <p className='font-secondary py-[25px] text-[18px]'>Meditate</p>
                     <img src={meditate} alt="" className='h-[42px] w-[42px]' />
                 </div>
-                <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+                <div onClick={()=> setSelected('Exercise')} className={`bg-white w-[150px] h-[150px] cursor-pointer rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF] ${selected === 'Exercise' && 'border-2'}`}>
                     <p className='font-secondary py-[25px] text-[18px]'>Exercise</p>
                     <img src={exercise} alt="" className='h-[42px] w-[42px]' />
                 </div>
-                <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+                <div onClick={()=> setSelected('Sleep')} className={`bg-white w-[150px] h-[150px] cursor-pointer rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF] ${selected === 'Sleep' && 'border-2'}`}>
                     <p className='font-secondary py-[25px] text-[18px]'>Sleep</p>
                     <img src={sleep} alt="" className='h-[42px] w-[42px]' />
                 </div>
-                <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+                <div onClick={()=> setSelected('Diet')} className={`bg-white w-[150px] h-[150px] cursor-pointer rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF] ${selected === 'Diet' && 'border-2'}`}>
                     <p className='font-secondary py-[25px] text-[18px]'>Diet</p>
                     <img src={food} alt="" className='h-[42px] w-[42px]' />
                 </div>
