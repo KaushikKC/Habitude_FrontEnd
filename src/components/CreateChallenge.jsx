@@ -8,7 +8,7 @@ function CreateChallenge({isOpen,setIsOpen}) {
   const[name,setName] = useState('')
 
   const handleSubmit = async () => {
-    const docRef = await addDoc(collection(db, "Habiits"), {
+    const docRef = await addDoc(collection(db, "Challenge"), {
       name: name,    
     });
 
@@ -26,7 +26,7 @@ function CreateChallenge({isOpen,setIsOpen}) {
         <p className='font-semibold font-secondary text-[40px]'>Create Challenge</p>
         <div className='pt-[20px]'>
             <p className='font-semibold font-secondary text-[25px] pb-[10px]'>NAME</p>
-            <input type="text" value={name} onClick={(e)=>setName(e.target.value)} className='bg-transparent w-[350px] outline-none border-b-2 border-black' placeholder='Enter Challenge Name' />
+            <input type="text" value={name} onChange={(e)=>setName(e.target.value)} className='bg-transparent w-[350px] outline-none border-b-2 border-black' placeholder='Enter Challenge Name' />
         </div>
         <div className='pt-[30px] flex flex-col'>
             <p className='font-semibold font-secondary text-[25px] pb-[10px]'>STAKE</p>

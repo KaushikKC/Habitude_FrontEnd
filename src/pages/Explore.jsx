@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import water from '../images/waterdrop.png'
 import books from '../images/books.png'
 import meditate from '../images/meditate.png'
@@ -13,11 +13,46 @@ import CreateHabit from '../components/CreateHabit'
 import Navbar from '../components/Navbar'
 import CreateChallenge from '../components/CreateChallenge'
 import JoinChallenge from '../components/JoinChallenge'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../config/firebase'
 
 function Explore() {
   const [habbitOpen, setHabbitOpen] = useState(false)
+  const [habbits, setHabbits] = useState([])
+  const [Challenges, setChallenges] = useState([])
   const [isOpen, setIsOpen] = useState(false)
   const [isJoin, setIsJoin] = useState(false)
+
+  const fetchHabits = async () => {
+       
+    await getDocs(collection(db, "Habits"))
+        .then((querySnapshot)=>{               
+            const newData = querySnapshot.docs
+                .map((doc) => ({...doc.data(), id:doc.id }));
+            setHabbits(newData);                
+            console.log("Habits", newData);
+        })
+   
+}
+
+const fetchChallenge = async () => {
+       
+  await getDocs(collection(db, "Challenge"))
+      .then((querySnapshot)=>{               
+          const newData = querySnapshot.docs
+              .map((doc) => ({...doc.data(), id:doc.id }));
+          setChallenges(newData);                
+          console.log("Challenge", newData);
+      })
+ 
+}
+
+
+
+useEffect(() => {
+  fetchHabits()
+  fetchChallenge()
+},[])
   return (
     <div className='flex flex-col justify-center items-center bg-blue-50'>
       {
@@ -71,6 +106,14 @@ function Explore() {
                   <p className='font-secondary py-[25px] text-[18px]'>Study</p>
                   <img src={study} alt="" className='h-[42px] w-[42px]' />
               </div>
+              {
+                habbits.map((habit,i) => (
+                  <div className='bg-gray-300 w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+                  <p className='font-secondary py-[25px] text-[18px]'>{habit.name}</p>
+                  <img src={study} alt="" className='h-[42px] w-[42px]' />
+              </div>
+              ))}
+              
           </div>
       </div>
       <div className='pt-[30px]'>
@@ -103,6 +146,16 @@ function Explore() {
                     <p className='font-secondary font-extralight text-[18px] text-white px-[10px]'>21 days Challenge</p>
                   </div>
               </div>
+              {
+                Challenges.map((challenge,i) => (
+                  <div onClick={()=> setIsJoin(!isJoin)} className='w-[250px] h-[150px] bg-[#3843FF] rounded-xl flex flex-col items-center hover:border-2 border-black'>
+                  <p className='font-secondary py-[25px] text-[18px] text-white'>{challenge.name}</p>
+                  <div className='flex flex-row items-center'>
+                    <img src={clock} alt="" className='h-[38px] w-[38px]' />
+                    <p className='font-secondary font-extralight text-[18px] text-white px-[10px]'>21 days Challenge</p>
+                  </div>
+              </div>
+              ))}
           </div>
       </div>
     

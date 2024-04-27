@@ -7,7 +7,7 @@ function CreateHabit({habbitOpen,setHabbitOpen}) {
   const [name,setName] = useState('')
 
   const handleSubmit = async () => {
-    const docRef = await addDoc(collection(db, "Habiits"), {
+    const docRef = await addDoc(collection(db, "Habits"), {
       name: name,    
     });
 
