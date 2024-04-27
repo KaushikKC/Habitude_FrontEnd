@@ -6,7 +6,7 @@ import friends from '../images/Friends_2.png'
 import water from '../images/droplevel.png'
 import walk from '../images/walklevel.png'
 import plants from '../images/plantslevel.png'
-import meditate from '../images/meditatelevel.png'
+import cycle from '../images/cyclelevel.png'
 import ClaimHabit from '../components/ClaimHabit'
 import tick from '../images/tick.png'
 import ClaimChallenge from '../components/ClaimChallenge'
@@ -112,9 +112,9 @@ function Dashboard() {
             </div>
         </div>
         <div className='flex flex-row items-center bg-white p-[15px] mt-[30px] w-[450px] rounded-lg'>
-            <img src={meditate} alt=""  className='h-[40px] w-[40px]'/>
+            <img src={cycle} alt=""  className='h-[40px] w-[40px]'/>
             <div className='px-[15px] flex flex-col '>
-                <p>Meditate</p>
+                <p>Cycling</p>
                 <p className='text-gray-500 font-extralight'>30/30 MIN</p>
             </div>
             <div onClick={()=>setIsClaim(!isClaim)} className='flex justify-end ml-auto cursor-pointer'>

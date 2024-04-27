@@ -8,6 +8,7 @@ import travel from '../images/travel.png'
 import sleep from '../images/sleep.png'
 import study from '../images/study.png'
 import clock from '../images/clock.png'
+import cycle from '../images/Bicycle.png'
 import fit from '../images/food.png'
 import CreateHabit from '../components/CreateHabit'
 import Navbar from '../components/Navbar'
@@ -86,31 +87,31 @@ useEffect(() => {
           </div>
         </div>
           <div className='grid grid-rows-2 grid-flow-col gap-5 py-[10px]'>
-              <div className='bg-orange-200 w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+              <div className='bg-orange-200 w-[150px] h-[150px] rounded-xl flex flex-col items-center cursor-pointer hover:border-2 border-[#3843FF]'>
                   <p className='font-secondary py-[25px] text-[18px]'>Drink Water</p>
                   <img src={water} alt="" className='h-[42px] w-[42px]' />
               </div>
-              <div className='bg-pink-200 w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+              <div className='bg-pink-200 w-[150px] h-[150px] rounded-xl flex flex-col items-center cursor-pointer hover:border-2 border-[#3843FF]'>
                   <p className='font-secondary py-[25px] text-[18px]'>Read Books</p>
                   <img src={books} alt="" className='h-[42px] w-[42px]' />
               </div>
-              <div className='bg-green-200 w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+              <div className='bg-green-200 w-[150px] h-[150px] rounded-xl flex flex-col items-center cursor-pointer hover:border-2 border-[#3843FF]'>
                   <p className='font-secondary py-[25px] text-[18px]'>Meditate</p>
                   <img src={meditate} alt="" className='h-[42px] w-[42px]' />
               </div>
-              <div className='bg-blue-200 w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+              <div className='bg-blue-200 w-[150px] h-[150px] rounded-xl flex flex-col items-center cursor-pointer hover:border-2 border-[#3843FF]'>
                   <p className='font-secondary py-[25px] text-[18px]'>Sleep</p>
                   <img src={sleep} alt="" className='h-[42px] w-[42px]' />
               </div>
-              <div className='bg-gray-300 w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+              <div className='bg-gray-300 w-[150px] h-[150px] rounded-xl flex flex-col items-center cursor-pointer hover:border-2 border-[#3843FF]'>
                   <p className='font-secondary py-[25px] text-[18px]'>Study</p>
                   <img src={study} alt="" className='h-[42px] w-[42px]' />
               </div>
               {
                 habbits.map((habit,i) => (
-                  <div className='bg-gray-300 w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+                  <div className='bg-red-300 w-[150px] h-[150px] rounded-xl flex flex-col items-center cursor-pointer hover:border-2 border-[#3843FF]'>
                   <p className='font-secondary py-[25px] text-[18px]'>{habit.name}</p>
-                  <img src={study} alt="" className='h-[42px] w-[42px]' />
+                  <img src={cycle} alt="" className='h-[42px] w-[42px]' />
               </div>
               ))}
               
@@ -125,21 +126,21 @@ useEffect(() => {
           </div>
         </div>
           <div className='grid grid-rows-2 grid-flow-col gap-5 py-[10px]'>
-              <div onClick={()=> setIsJoin(!isJoin)} className='w-[250px] h-[150px] rounded-xl bg-[#3843FF] flex flex-col items-center hover:border-2 border-black'>
+              <div onClick={()=> setIsJoin(!isJoin)} className='w-[250px] h-[150px] rounded-xl bg-[#3843FF] cursor-pointer flex flex-col items-center hover:border-2 border-black'>
                   <p className='font-secondary py-[25px] text-[18px] text-white'>Best Coders !</p>
                   <div className='flex flex-row items-center'>
                     <img src={clock} alt="" className='h-[38px] w-[38px]' />
                     <p className='font-secondary font-extralight text-[18px] text-white px-[10px]'>1 week Challenge</p>
                   </div>
               </div>
-              <div onClick={()=> setIsJoin(!isJoin)} className='w-[250px] h-[150px] rounded-xl flex flex-col bg-[#3843FF] items-center hover:border-2 border-black'>
+              <div onClick={()=> setIsJoin(!isJoin)} className='w-[250px] h-[150px] rounded-xl flex flex-col cursor-pointer bg-[#3843FF] items-center hover:border-2 border-black'>
                   <p className='font-secondary py-[25px] text-[18px] text-white'>Night Owls !</p>
                   <div className='flex flex-row items-center'>
                     <img src={clock} alt="" className='h-[38px] w-[38px]' />
                     <p className='font-secondary font-extralight text-[18px] text-white px-[10px]'>2 weeks Challenge</p>
                   </div>
               </div>
-              <div onClick={()=> setIsJoin(!isJoin)} className='w-[250px] h-[150px] bg-[#3843FF] rounded-xl flex flex-col items-center hover:border-2 border-black'>
+              <div onClick={()=> setIsJoin(!isJoin)} className='w-[250px] h-[150px] bg-[#3843FF] rounded-xl cursor-pointer flex flex-col items-center hover:border-2 border-black'>
                   <p className='font-secondary py-[25px] text-[18px] text-white'>Gym Stakers</p>
                   <div className='flex flex-row items-center'>
                     <img src={clock} alt="" className='h-[38px] w-[38px]' />
@@ -148,11 +149,11 @@ useEffect(() => {
               </div>
               {
                 Challenges.map((challenge,i) => (
-                  <div onClick={()=> setIsJoin(!isJoin)} className='w-[250px] h-[150px] bg-[#3843FF] rounded-xl flex flex-col items-center hover:border-2 border-black'>
+                  <div onClick={()=> setIsJoin(!isJoin)} className='w-[250px] h-[150px] bg-[#3843FF] cursor-pointer rounded-xl flex flex-col items-center hover:border-2 border-black'>
                   <p className='font-secondary py-[25px] text-[18px] text-white'>{challenge.name}</p>
                   <div className='flex flex-row items-center'>
                     <img src={clock} alt="" className='h-[38px] w-[38px]' />
-                    <p className='font-secondary font-extralight text-[18px] text-white px-[10px]'>21 days Challenge</p>
+                    <p className='font-secondary font-extralight text-[18px] text-white px-[10px]'>48 days Challenge</p>
                   </div>
               </div>
               ))}
@@ -165,25 +166,25 @@ useEffect(() => {
           <p className=' font-secondary text-[20px] text-[#3843FF] cursor-pointer'>VIEW ALL</p>
         </div>
           <div className='grid grid-rows-2 grid-flow-col gap-5 py-[10px]'>
-              <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+              <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center cursor-pointer hover:border-2 border-[#3843FF]'>
                   <p className='font-secondary py-[25px] text-[18px]'>Dancers</p>
                   <img src={dance} alt="" className='h-[42px] w-[42px]' />
               </div>
-              <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+              <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center cursor-pointer hover:border-2 border-[#3843FF]'>
                   <p className='font-secondary py-[25px] text-[18px]'>Travellers</p>
                   <img src={travel} alt="" className='h-[42px] w-[42px]' />
               </div>
-              <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+              <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center cursor-pointer hover:border-2 border-[#3843FF]'>
                   <p className='font-secondary py-[25px] text-[18px]'>Fitness</p>
                   <img src={fit} alt="" className='h-[42px] w-[42px]' />
               </div>
-              <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
+              <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col cursor-pointer items-center hover:border-2 border-[#3843FF]'>
                   <p className='font-secondary py-[25px] text-[18px]'>Joggers</p>
                   <img src={joggers} alt="" className='h-[42px] w-[42px]' />
               </div>
-              <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col items-center hover:border-2 border-[#3843FF]'>
-                  <p className='font-secondary py-[25px] text-[18px]'>Joggers</p>
-                  <img src={joggers} alt="" className='h-[42px] w-[42px]' />
+              <div className='bg-white w-[150px] h-[150px] rounded-xl flex flex-col cursor-pointer items-center hover:border-2 border-[#3843FF]'>
+                  <p className='font-secondary py-[25px] text-[18px]'>Cycling</p>
+                  <img src={cycle} alt="" className='h-[42px] w-[42px]' />
               </div>
           </div>
       </div>
