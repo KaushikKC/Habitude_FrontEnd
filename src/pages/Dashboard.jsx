@@ -28,13 +28,15 @@ function Dashboard() {
           <p className='font-semibold text-[25px]'>Challenges</p>
           <p className='text-[20px] cursor-pointer'>VIEW ALL</p>
         </div>
-        <div className='flex flex-row justify-start bg-white p-[15px] w-[450px] rounded-lg'>
+        <div className='flex flex-row justify-between bg-white p-[15px] w-[450px] rounded-lg'>
+            <div className='flex '>
             <div className='flex items-center'>
                 <img src={clock} alt="" className='h-[35px] w-[35px]' />
             </div>
-            <div className='px-[15px] flex flex-col justify-start items-center'>
+            <div className='px-[15px] flex flex-col justify-start '>
                 <p>Daily Fit Challenge! 🏃🏻‍</p>
                 <p className='text-gray-500 font-extralight'>5 days left</p>
+            </div>
             </div>
             <div className='flex flex-col items-center justify-center'>
                 <img src={friends} alt="" className='h-[35px] w-[60px]' />
@@ -48,7 +50,7 @@ function Dashboard() {
         </div>
         <div className='flex flex-row items-center bg-white p-[15px] w-[450px] rounded-lg'>
             <img src={water} alt=""  className='h-[40px] w-[40px]'/>
-            <div className='px-[15px] flex flex-col items-center justify-start'>
+            <div className='px-[15px] flex flex-col justify-start'>
                 <p>Drink Water‍</p>
                 <p className='text-gray-500 font-extralight'>500/2000 ML</p>
             </div>
@@ -58,7 +60,7 @@ function Dashboard() {
         </div>
         <div className='flex flex-row items-center justify-start bg-white mt-[30px] p-[15px] w-[450px] rounded-lg'>
             <img src={walk} alt=""  className='h-[40px] w-[40px]'/>
-            <div className='px-[15px] flex flex-col items-center '>
+            <div className='px-[15px] flex flex-col justify-start'>
                 <p>Walk</p>
                 <p className='text-gray-500 font-extralight'>5000/10000 STEPS</p>
             </div>
@@ -68,7 +70,7 @@ function Dashboard() {
         </div>
         <div className='flex flex-row items-center bg-white p-[15px] mt-[30px] w-[450px] rounded-lg'>
             <img src={plants} alt=""  className='h-[40px] w-[40px]'/>
-            <div className='px-[15px] flex flex-col items-center'>
+            <div className='px-[15px] flex flex-col '>
                 <p>Water‍ Plants</p>
                 <p className='text-gray-500 font-extralight'>0/1 TIMES</p>
             </div>
@@ -78,7 +80,7 @@ function Dashboard() {
         </div>
         <div className='flex flex-row items-center bg-white p-[15px] mt-[30px] w-[450px] rounded-lg'>
             <img src={meditate} alt=""  className='h-[40px] w-[40px]'/>
-            <div className='px-[15px] flex flex-col items-center'>
+            <div className='px-[15px] flex flex-col '>
                 <p>Meditate</p>
                 <p className='text-gray-500 font-extralight'>30/30 MIN</p>
             </div>
